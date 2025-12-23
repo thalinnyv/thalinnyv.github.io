@@ -17,6 +17,12 @@
   frameborder="0"
   allowfullscreen>
 </iframe>
+  
+  <label>
+  <input type="checkbox" id="his_aula1">
+  Aula assistida
+</label>
+
 
 <iframe
   src="# nome do arquivo aqui.pdf"
@@ -24,9 +30,20 @@
   height="360">
 </iframe>
 
-<p>
-  <a href="index.html">Voltar</a>
-</p>
+<script>
+const checkbox = document.getElementById("his_aula1");
+
+checkbox.checked = localStorage.getItem("his_aula1") === "true";
+
+checkbox.addEventListener("change", function() {
+  localStorage.setItem("his_aula1", checkbox.checked);
+});
+</script>
+  
+  <button onclick="location.href='#aula2'">
+Próxima aula →
+</button>
+
 
 </body>
 </html>
